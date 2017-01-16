@@ -90,6 +90,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\ParagraphController.cs" />
     <Compile Include="Models\ParagraphResultModel.cs" />
+    <Compile Include="Controllers\AmortizationController.cs" />
+    <Compile Include="Models\AmortizationResultModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -102,6 +104,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Paragraph\Index.cshtml" />
     <Content Include="Views\Paragraph\Result.cshtml" />
+    <Content Include="Views\Amortization\Index.cshtml" />
+    <Content Include="Views\Amortization\Result.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

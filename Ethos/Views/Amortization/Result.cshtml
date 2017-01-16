@@ -1,15 +1,26 @@
-﻿@model Ethos.AmortizationModel
+﻿@model IEnumerable<Ethos.AmortizationResultModel>
 
 @{
     Layout = null;
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Result</title>
-</head>
-<body>
-</body>
-</html>
+<table>
+	<td>Payment</td>
+	<td>Principal Paid</td>
+	<td>Balance</td>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Payment)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.PrincipalPaid)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Balance)
+			</td>
+		</tr>
+	}
+</table>
 

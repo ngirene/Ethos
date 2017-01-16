@@ -8,7 +8,7 @@ namespace Ethos
 		//we add a property for monthly pay because this is a fixed value.
 		[Required]
 		[Display(Name="Principal")]
-		public decimal PrincipalAmount { get; set; }
+		public decimal Principal { get; set; }
 
 		[Required]
 		[Display(Name="Terms")]
@@ -19,20 +19,26 @@ namespace Ethos
 		[Range(0.00, 100.00)]
 		public decimal InterestRate { get; set; }
 
-		[Display(Name="Monthly Payment")]
-		public decimal MonthlyPay { get; set; }
-
-		public AmortizationModel(decimal principal, int terms, decimal interest)
+		//let p = principal
+		//let a = the monthly amortized payment
+		//let r = interest rate
+		//let n = terms in months
+		//the formula is a = (p*r(1+r)^n))/((1+r^n)-1)
+		public AmortizationResultModel Calculate(decimal principal, int terms, decimal interest, decimal originalBalance)
 		{
-			MonthlyPay = principal / terms;
+			decimal rate = interest / (100 * 12);
+			decimal interestPaid = originalBalance * rate;
+			decimal compound = (decimal)Math.Pow((1 + (double)rate), terms);
+			decimal payment = (interestPaid * compound) / (compound - 1);
+			decimal principalPaid = payment - principal*rate;
+			Principal = principal - principalPaid;
+			return new AmortizationResultModel
+			{
+				Balance = principal - principalPaid,
+				Payment = payment,
+				PrincipalPaid = principalPaid
+			};
 		}
 
-		//we will return an instance of the AmortizationModel for every month's calculation.
-		public AmortizationModel Calculate(decimal principal, int terms, decimal interest)
-		{
-			decimal interestPay = (principal * interest) / (100 * 12);
-			decimal newPrincipal = principal - (MonthlyPay - interestPay);
-			return new AmortizationModel(newPrincipal, terms, interest); 
-		}
 	}
 }

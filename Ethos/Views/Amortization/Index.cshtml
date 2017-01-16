@@ -1,8 +1,36 @@
 ﻿@model Ethos.AmortizationModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Amortization Schedule";
 }
 
-<h2>Index</h2>
+<h2>Amortization Schedule</h2>
+
+@using (Html.BeginForm("HandleForm", "Amortization", FormMethod.Post)){
+	@Html.ValidationSummary(true)
+	<div class="principal-label">
+		@Html.DisplayNameFor(model => model.Principal)
+	</div>
+	<div class="principal-field">
+		@Html.TextBoxFor(model => model.Principal)
+		@Html.ValidationMessageFor(model => model.Principal)
+	</div>
+	<div class="term-label">
+		@Html.DisplayNameFor(model => model.Terms)
+	</div>
+	<div class="term-field">
+		@Html.TextBoxFor(model => model.Terms)
+		@Html.ValidationMessageFor(model => model.Terms)
+	</div>
+		<div class="interest-label">
+		@Html.DisplayNameFor(model => model.InterestRate)
+	</div>
+	<div class="interest-field">
+		@Html.TextBoxFor(model => model.InterestRate)
+		@Html.ValidationMessageFor(model => model.InterestRate)
+	</div>
+	<input type="submit" value="Submit" />
+}
+
+
 
