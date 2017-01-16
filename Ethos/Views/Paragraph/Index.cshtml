@@ -1,0 +1,19 @@
+﻿@model Ethos.ParagraphModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to Ethos! Here, we can manipulate a paragraph. Let's try it out!</h2>
+
+@using (Html.BeginForm("HandleForm", "Paragraph", FormMethod.Post)){
+	@Html.ValidationSummary(true)
+	<div class="paragraph-label">
+		@Html.DisplayNameFor(model => model.Paragraph)
+	</div>
+	<div class="paragraph-field">
+		@Html.TextAreaFor(model => model.Paragraph)
+		@Html.ValidationMessageFor(model => model.Paragraph)
+	</div>
+	<input type="submit" value="Submit" />
+}

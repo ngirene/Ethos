@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ethos", "Ethos\Ethos.csproj", "{62EB644A-6861-4770-89CF-93C65F5C0FF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ethos.Tests", "Ethos.Tests\Ethos.Tests.csproj", "{0770DBE6-1457-4DFB-8650-AD047E131669}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62EB644A-6861-4770-89CF-93C65F5C0FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62EB644A-6861-4770-89CF-93C65F5C0FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62EB644A-6861-4770-89CF-93C65F5C0FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62EB644A-6861-4770-89CF-93C65F5C0FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0770DBE6-1457-4DFB-8650-AD047E131669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0770DBE6-1457-4DFB-8650-AD047E131669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0770DBE6-1457-4DFB-8650-AD047E131669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0770DBE6-1457-4DFB-8650-AD047E131669}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,39 @@
+﻿@model Ethos.ParagraphResultModel
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Welcome to Ethos! Here, we can manipulate a paragraph. Let's try it out!</h2>
+
+@using (Html.BeginForm("HandleForm", "Paragraph", FormMethod.Post)){
+	@Html.ValidationSummary(true)
+	<div class="paragraph-label">
+		@Html.DisplayNameFor(model => model.Paragraph)
+	</div>
+	<div class="paragraph-field">
+		@Html.TextAreaFor(model => model.Paragraph)
+		@Html.ValidationMessageFor(model => model.Paragraph)
+	</div>
+	<input type="submit" value="Submit" />
+	<div class="paragraph-reverse-words">
+		Reverse Word Order:<br />
+		@Html.TextAreaFor(model => model.ReverseWords)
+		@Html.ValidationMessageFor(model => model.ReverseWords)
+	</div>
+	<div class="paragraph-reverse-chars">
+		Reverse Characters:<br />
+		@Html.TextAreaFor(model => model.ReverseChars)
+		@Html.ValidationMessageFor(model => model.ReverseChars)
+	</div>
+	<div class="paragraph-sort">
+		Sorted:<br />
+		@Html.TextAreaFor(model => model.SortedParagraph)
+		@Html.ValidationMessageFor(model => model.SortedParagraph)
+	</div>
+	<div class="paragraph-hash">
+		Encrypted Hash String:<br />
+		@Html.TextAreaFor(model => model.EncryptedHash)
+		@Html.ValidationMessageFor(model => model.EncryptedHash)
+	</div>
+}
